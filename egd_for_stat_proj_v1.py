@@ -1,5 +1,7 @@
 import numpy as np
-
+import sys 
+sys.path.append('C:\\Users\\inoxb\\Downloads\\Stat project')
+from number_of_char_counter import ascii_frequency_matrix
 def loss_function(X, y, w, lambda1, lambda2):
     # Compute the predictions
     y_pred = X @ w
@@ -77,8 +79,7 @@ def exponential_gradient_descent(X, y, lambda1, lambda2, learning_rate=0.1, max_
 
 # Example usage
 # Generate random data
-np.random.seed(0)
-X = np.random.randint(1, 100,size=(100,26))
+X = ascii_frequency_matrix
 y = np.sum(X,axis=1)
 z = np.sum(X,axis=0)
 u = np.sum(y)
@@ -86,8 +87,8 @@ u = np.sum(y)
 lambda1 = 0.1
 lambda2 = 0.1
 learning_rate = 0.1
-max_iter = 1000
-tol = 1e-6
+max_iter = 10000
+tol = 1e-9
 
 # Perform exponential gradient descent
 w_optimal = exponential_gradient_descent(X, y, lambda1, lambda2, learning_rate, max_iter, tol)
@@ -96,3 +97,4 @@ print("Optimal Weights:")
 print(w_optimal)
 print(z)
 print(u)
+print(ascii_frequency_matrix)
