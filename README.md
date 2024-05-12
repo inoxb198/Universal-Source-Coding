@@ -24,7 +24,7 @@ This algorithm allows for adaptive encoding and decoding, where the encoding sch
 
 First we try and formalize how large should be a chunk of data.Suppose a monkey is randomly hitting keys on a typewriter with all the 128 ascii characters.The expected number of hits required to hit all the characters is 128H_{128} where H_{128} denotes the 128th harmonic number this fact comes from the Expectation of coupon collecting problem
 
-Formally, the process can be described as follows:
+We now formally show how the dictionary keeps on getting updated so at every step we dont have to save the dictionary and the process can be described as follows:
 
 1. **Initialization**:
    - Given an initial encoding scheme \( E_1 \), weight vector \( W_1 \), and dictionary \( D_1 \), encode the first chunk of text using \( E_1 \) and maintain \( D_1 \).
@@ -48,4 +48,6 @@ Formally, the process can be described as follows:
    - If the indexes of non-zero weights of \( W_2 \) have a non-zero intersection with the indexes of non-zero weights of \( W_1 \):
      - Again, compute the dictionary \( D_2 \) separately.
 
-This formal description outlines the procedure for adaptively updating the encoding scheme and dictionary based on changes in the weight vectors of chunks of text. It accounts for scenarios where the monotonicity changes and where the sets of non-zero weights intersect or are disjoint between consecutive weight vectors.
+This formal description outlines the procedure for adaptively updating the encoding scheme and dictionary based on changes in the weight vectors of chunks of text. It accounts for scenarios where the monotonicity changes and where the sets of non-zero weights intersect or are disjoint between weight vectors.
+
+Now we can recursively keep on storing the dictionary by noting the changes being made so we dont have to collectively store a complete dictionary everytime we add a new chunk of data which will make the decoding a simple recursive process 
