@@ -1,6 +1,6 @@
 # Universal-Source-Coding
 Exponential Gradient Descent
-\section{Exponential Gradient Descent}
+
 We assume the decision space to be the following \(S\) is a d-dimensional simplex that is 
 \[S=\left\{ w | w_{i} \geq 0 \text{ and }  ||w||_{1}=1 \right\}\]
 In exponentiated gradient descent at time \(t=1\) we choose the central point of the simplex namely \(w_{i,d}=\frac{1}{d}\) then we update in the following manner:
