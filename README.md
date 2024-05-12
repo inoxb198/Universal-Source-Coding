@@ -2,7 +2,7 @@
 Exponential Gradient Descent
 \section{Exponential Gradient Descent}
 We assume the decision space to be the following \(S\) is a d-dimensional simplex that is 
-$$S=\left\{ w | w_{i} \geq 0 \text{ and }  ||w||_{1}=1 \right\}$$
+$S=\left\{ w | w_{i} \geq 0 \text{ and }  ||w||_{1}=1 \right\}$
 In exponentiated gradient descent at time \(t=1\) we choose the central point of the simplex namely \(w_{i,d}=\frac{1}{d}\) then we update in the following manner:
 $$\forall i \in \left [ d \right ],w_{t+1,i}=\frac{w_{t,i}\text{exp}\left\{-\eta \left[ \nabla c_{t} \left(w_{t} \right) \right]_{i}\right\}}{Z_{t}}$$ where 
 $$Z_{t}=\sum_{i} w_{t,i} \left[ \nabla c_{t}\left(w_{t}\right)\right]_{i}$$ 
