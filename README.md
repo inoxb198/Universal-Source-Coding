@@ -1,7 +1,7 @@
 To implement the following algorithm effectively, it's crucial to understand its key components and the sequential flow of operations. Here's a formal description of the algorithm:
 
-1.\textbf{Input Data Processing}:
-   - As a user continuously inputs data into a file, the module \text{`number of char counter.py`} processes each chunk of data.
+1.$\textbf{Input Data Processing}$:
+   - As a user continuously inputs data into a file, the module $\text{`number of char counter.py`}$ processes each chunk of data.
    - Upon receiving a chunk of data, the \(\text{`number of char counter.py`}\) module runs the \(\text{`egd for stat proj v1.py`}\) file. This process computes the optimal weights based on the received data.
 
 2. \textbf{Huffman Encoding}:
