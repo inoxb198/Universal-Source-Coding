@@ -51,3 +51,23 @@ We now formally show how the dictionary keeps on getting updated so at every ste
 This formal description outlines the procedure for adaptively updating the encoding scheme and dictionary based on changes in the weight vectors of chunks of text. It accounts for scenarios where the monotonicity changes and where the sets of non-zero weights intersect or are disjoint between weight vectors.
 
 Now we can recursively keep on storing the dictionary by noting the changes being made so we dont have to collectively store a complete dictionary everytime we add a new chunk of data which will make the decoding a simple recursive process 
+
+
+1. **Initial Encoding Tree**: 
+   - Adaptive Huffman encoding starts with an initial encoding tree that represents a fixed initial dictionary mapping characters to binary codes. This initial tree is commonly constructed using a predefined method like ASCII or fixed-length codes.
+
+2. **Tree Update on New Symbol Arrival**: 
+   - As new symbols are encountered in the input stream, the encoding tree is updated dynamically. If the new symbol is encountered for the first time, it is added to the encoding tree with a new code. If the symbol has been seen before, the encoding tree is adjusted to maintain the Huffman coding property, typically by swapping nodes to maintain the optimal encoding.
+
+3. **Tree Traversal for Encoding**: 
+   - To encode a symbol, the encoding tree is traversed from the root to the leaf node corresponding to the symbol. The binary code associated with that leaf node is then output as the encoded representation of the symbol.
+
+4. **Dynamic Nature of the Encoding Tree**: 
+   - The encoding tree evolves continuously as new symbols are encountered. This dynamic nature of the tree allows it to adapt to changes in the frequency distribution of symbols in the input stream.
+
+5. **Implicit Dictionary Preservation**: 
+   - Since the encoding tree represents a mapping from symbols to binary codes, the dictionary is implicitly preserved as the tree evolves. Each node in the tree corresponds to a symbol, and the path from the root to a leaf node represents the binary code for that symbol. Therefore, at any given point, the encoding tree encapsulates the current dictionary mapping.
+
+6. **Chunk-Based Encoding**: 
+   - While adaptive Huffman encoding does not explicitly preserve the dictionary at every chunk, it continuously updates the encoding tree based on the symbols encountered in the input stream. Therefore, the encoding scheme adapts to the characteristics of the input data dynamically, ensuring efficient compression.
+
